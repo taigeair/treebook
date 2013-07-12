@@ -29,8 +29,7 @@
 		</div>
 	</div>
 	<div class="container">
-			<% if flash.each do |type, message| %>
-			<% end %>
+			<% if flash[:notice]%>
 				<div class="alert alert-success">
 					<button class="close" data-dismiss="alert">x</button>
 					<%= flash[:notice] %>
