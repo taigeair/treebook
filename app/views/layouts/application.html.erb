@@ -13,8 +13,8 @@
 			<a class="brand" href="#">Treebook</a>
 			<ul class="nav">
 			<li><%= link_to "All Statuses", :feed %></li>
-			<li><%= link_to "All Statuses absolute", statuses_url %><li>
-			<li><%= link_to "New", new_status_path %></li>
+			<li><%= link_to "My Statuses", current_user.profile_name %><li>
+						<li><%= link_to "New", new_status_path %></li>
 			</ul>
 			<ul class="nav pull-right">
 				<% if user_signed_in? %>
