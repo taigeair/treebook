@@ -1,0 +1,26 @@
+<div class="page-header">
+	<h1 id="full-name"><%= @user.first_name %></h1>
+</div>
+
+		<% if @statuses %>
+			<% @statuses.each do |status| %>
+			<div class="well">
+				<%= status.content + " said by " + status.user.full_name %> - <%= link_to time_ago_in_words(status.created_at) + " ago", status_path(status) %> 
+			</div>		
+			<% end %>
+		<% end %>
+	
+<script>
+
+
+function toTitleCase(str)
+{
+    var text = str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	console.log(text);
+	document.getElementById('full-name').innerHTML = text;
+	
+}
+
+toTitleCase("<%= @user.full_name %>");
+
+</script>
