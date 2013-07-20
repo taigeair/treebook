@@ -8,6 +8,10 @@ gem 'rails', '3.2.12'
 gem 'devise'
 gem 'simple_form'
 
+group :production do
+	gem 'pg'
+end
+
 group :development, :test do
 	gem 'sqlite3'
 end
